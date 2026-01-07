@@ -3,7 +3,7 @@ import useGet from "../hooks/useGet";
 import { GoArrowRight } from "react-icons/go";
 
 const HomePage = () => {
-  const { data, loading } = useGet({url:"products"});
+  const { data} = useGet({url:"products"});
   const products = data?.data?.products;
   
 

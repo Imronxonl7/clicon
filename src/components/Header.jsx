@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 import Twitter from "./pictures/Twitter.svg";
 import Facebook from "./pictures/Facebook.svg";
 import Pinterest from "./pictures/Pinterest.svg";
@@ -6,15 +6,19 @@ import Reddit from "./pictures/Reddit.svg";
 import YouTube from "./pictures/Youtube.svg";
 import Instagram from "./pictures/Instagram.svg";
 import Icon from "./pictures/Icon.svg";
-import PhoneCall  from "./pictures/PhoneCall.svg"
+import PhoneCall from "./pictures/PhoneCall.svg";
 import { PiHeart, PiShoppingCartLight, PiUserLight } from "react-icons/pi";
 import { SlLocationPin } from "react-icons/sl";
 import { GoGitCompare } from "react-icons/go";
 import { AiOutlineCustomerService } from "react-icons/ai";
 import { IoHelpCircleOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import { CartContextCard } from "../context/CartContext";
 
 const Header = () => {
+  const { cart } = useContext(CartContextCard);
+  const { like } = useContext(CartContextCard)
+
   return (
     <header className="bg-[#1B6392] fixed top-0 z-10 w-full ">
       <div className="container mx-auto px-5">
@@ -106,9 +110,33 @@ const Header = () => {
             </button>
           </form>
           <div className="flex items-center gap-5">
-            <NavLink to={"/cart"} className="text-white"><PiShoppingCartLight className=" w-8 h-8" /></NavLink>
-            <NavLink to={"/like"} className="text-white"><PiHeart className=" w-8 h-8" /></NavLink>
-            <NavLink to={"/register"} className="text-white"><PiUserLight className=" w-8 h-8" /></NavLink>
+            <NavLink to={"/cart"} className="text-white">
+              <div className="relative">
+                <PiShoppingCartLight className="flex w-8 h-8 " />
+                {cart.length > 0 ? (
+                  <p className="shop absolute -top-1.5 w-5 text-[14px] h-5 -right-0.5 bg-white text-[#1B6392] rounded-[100px] flex items-center justify-center border-[1.5px] border-[#1B6392]">
+                    {cart?.length}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </div>
+            </NavLink>
+            <NavLink to={"/like"} className="text-white">
+              <div className="relative">
+                <PiHeart className="flex w-8 h-8 " />
+                {like.length > 0 ? (
+                  <p className="heart absolute -top-1.5 text-[14px] w-5 h-5 -right-0.5 bg-white text-[#1B6392] rounded-[100px] flex items-center justify-center border-[1.5px] border-[#1B6392]">
+                    {like?.length}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </div>
+            </NavLink>
+            <NavLink to={"/register"} className="text-white">
+              <PiUserLight className=" w-8 h-8" />
+            </NavLink>
           </div>
         </div>
       </div>
@@ -144,8 +172,10 @@ const Header = () => {
               </li>
             </ul>
             <div className="flex items-center gap-2">
-                <img src={PhoneCall} alt="" />
-                <p className="text-[#191C1F] text-[18px] font-normal">+1-202-555-0104</p>
+              <img src={PhoneCall} alt="" />
+              <p className="text-[#191C1F] text-[18px] font-normal">
+                +1-202-555-0104
+              </p>
             </div>
           </div>
         </div>

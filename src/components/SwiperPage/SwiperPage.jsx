@@ -11,7 +11,7 @@ import "swiper/css/thumbs";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
-export default function SwiperPage({images}) {
+export default function SwiperImages({ images }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
@@ -21,21 +21,22 @@ export default function SwiperPage({images}) {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
+        loop={true}
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {
-        images?.map((el) => (
-          <SwiperSlide>
+        {images?.map((el, i) => (
+          <SwiperSlide key={i}>
             <img src={el} />
           </SwiperSlide>
         ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
+        loop={true}
         spaceBetween={10}
         slidesPerView={4}
         freeMode={true}
@@ -43,9 +44,8 @@ export default function SwiperPage({images}) {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
       >
-         {
-        images?.map((el) => (
-          <SwiperSlide>
+        {images?.map((el, i) => (
+          <SwiperSlide key={i}>
             <img src={el} />
           </SwiperSlide>
         ))}

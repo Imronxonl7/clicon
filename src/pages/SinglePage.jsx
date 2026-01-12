@@ -13,7 +13,7 @@ const SinglePage = () => {
     <section>
       <div className="container mx-auto px-5">
         <div className="flex justify-center">
-          <div className="flex justify-between max-w-8xl  w-full gap-10 px-10 bg-white border border-[#E4E7E9] py-5 shadow-[0_8px_40px_0px_#0000001F] rounded-xs">
+          <div className="flex justify-between max-w-6xl  w-full gap-10 px-10 bg-white border border-[#E4E7E9] py-5 shadow-[0_8px_40px_0px_#0000001F] rounded-xs">
             {/** Product image */}
             <div>
               <SwiperPage images={singleProducts?.images} />

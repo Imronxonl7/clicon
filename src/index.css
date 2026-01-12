@@ -6,8 +6,8 @@
     color: #FA8232 !important;
 }
 
-.swiper {
-  width: 650px !important;
+ .swiper {
+  width: 450px !important;
 }
 
 .swiper-slide {
@@ -25,7 +25,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain !important;
 
 }
 
@@ -33,8 +33,8 @@
 
 .swiper {
   width: 100%;
-  height: 500px !important;
-  object-fit: cover !important;
+  height: 450px !important;
+  object-fit: contain !important;
   margin-left: auto;
   margin-right: auto;
   
@@ -46,7 +46,7 @@
 }
 
 .mySwiper2 {
-  height: 550px !important;
+  height: 500px !important;
 
 }
 
@@ -78,10 +78,9 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  background-color: white !important;
+  background-color: #F2F4F5 ;
+  object-fit: contain;
    border-radius: 4px !important;
-  border: 1px solid #E4E7E9 !important;
 }
 .swiper-button-next{
     border-radius: 50px !important;
@@ -93,4 +92,22 @@
     border-radius: 50px !important;
     background-color: #FA8232 !important;
     padding: 10px !important;
+}
+.moto{
+  width: 872px !important;
+  height: 540px !important;
+  object-fit: contain !important;
+  margin-bottom: 70px;
+  background-color: #F2F4F5 !important;
+  border-radius: 6px !important;
+}
+.swiper-pagination{
+  position: fixed; 
+  bottom: 40px !important;
+  left: -290px !important;
+}
+.swiper-pagination-bullet{
+  background: #191C1F !important;
+  width: 10px !important;
+  height: 10px !important; 
 }

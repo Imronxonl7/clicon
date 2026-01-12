@@ -9,7 +9,11 @@ const Card = ({ el, i }) => {
   const { cart, like, removeToLike, addToLike, addToCart, removeToCart } =
     useContext(CartContextCard);
   return (
-    <div key={i} className="w-62 h-74  group border border-[#E4E7E9] p-4">
+    <div key={i} className="w-62 h-74 relative  group border border-[#E4E7E9] p-4">
+      {
+        el.discountPercentage > 0 ? (      <p className="text-[14px] text-[#191C1F] font-normal absolute z-1 bg-[#EFD33D] px-2.5 py-1.25 rounded-xxs">{(el?.discountPercentage)}% OFF  </p>
+) : ""
+      }
       <div className="relative w-full h-47 ">
         <img
           className="object-contain max-w-54 w-full max-h-47 h-full "
@@ -61,7 +65,12 @@ const Card = ({ el, i }) => {
         <p className="text-[#191C1F] line-clamp-2 text-[14px] font-normal">
           {el.description}
         </p>
-        <p className="text-[14px] text-[#2DA5F3] font-semibold">$ {el.price}</p>
+        {
+          el.discountPercentage > 0 ? (<div className="flex items-center gap-3">
+          <p className="text-[14px] text-[#929FA5] font-normal line-through">$ {el.price}</p>
+          <p className="text-[16px] text-[#2DA5F3] font-semibold">$ {((el.price - (el.price * (el.discountPercentage / 100))).toFixed(2))}</p>
+        </div>) : (<p className="text-[14px] text-[#2DA5F3] font-semibold">$ {el.price}</p>)
+        }
       </div>
     </div>
   );

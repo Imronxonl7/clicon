@@ -6,7 +6,7 @@ const useGet = ({url , id = ""}) => {
     const [data , setData] = useState([])
     async function getAllData() {
         try {
-            let res = await axios.get(`https://dummyjson.com/${url}/${id}`)
+            let res = await axios.get(`https://dummyjson.com/${url}${ id === "" ? "" :`/${id}`}`)
             setData(res)
         } catch (error) {
             console.log(error);

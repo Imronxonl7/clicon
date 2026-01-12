@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import useGet from "../hooks/useGet";
 import SwiperPage from "../components/SwiperPage/SwiperPage";
 import AllStars from "./image/Star.svg"
 import { PiShoppingCartLight } from "react-icons/pi";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { CartContextCard } from "../context/CartContext";
 
 const SinglePage = () => {
   const { id } = useParams("id");
   const { data } = useGet({ url: "products", id: id });
   const singleProducts = data?.data;
+  const { cart , addToCart , removeToCart} = useContext(CartContextCard)
   return (
     <section>
       <div className="container mx-auto px-5">
@@ -55,11 +58,30 @@ const SinglePage = () => {
                   </div>
                   <p className="text-[18px] text-[#191C1F] font-normal bg-[#EFD33D] px-2.5 py-1.25 rounded-xxs">{(singleProducts?.discountPercentage)}% OFF  </p>
                 </div>
-                <div className="flex items-center justify-between mt-5 gap-5">
-                  <button className="flex h-14 items-center cursor-pointer justify-center gap-2 py-3  text-[20px] bg-[#FA8232] rounded-[3px] px-8 text-white w-full  ">ADD TO CART 
+                <div className="flex items-center justify-between mt-5 gap-4">
+                  <div className="border-2  border-[#E4E7E9] max-w-41 w-full max-h-14 flex items-center justify-between  px-5  py-3.5 rounded-[3px]">
+                    <button
+                    onClick={() => removeToCart(singleProducts)} 
+                    className="text-[#191C1F]">
+                      <FaMinus  />
+                    </button>
+                    <p className="text-[#475156] text-[16px] font-semibold">{cart.find((item) => item.id === singleProducts.id)?.qty  }</p>
+                   {
+                    cart?.find((item) => item.id === singleProducts.id) ? ( <button
+                    className="text-[#191C1F] ">
+                      <FaPlus />
+                    </button>) : ( <button
+                    onClick={() => addToCart(singleProducts)} 
+                    className="text-[#191C1F] ">
+                      <FaPlus />
+                    </button>)
+                   }
+                  </div>
+                  <button
+                   className="flex h-14 items-center cursor-pointer justify-center gap-2 py-3  text-[16px] bg-[#FA8232] rounded-[3px] px-8 text-white w-full  ">ADD TO CART 
                     <PiShoppingCartLight className="h-8 w-8"/>
                   </button>
-                  <Link to={"/cart"} className="flex max-w-60 h-14 items-center justify-center gap-2 py-3  text-[20px] text-[#FA8232] border-2 border-[#FA8232] rounded-[3px] px-8 bg-white  w-full  ">BUY NOW
+                  <Link to={"/cart"} className="flex max-w-35.5 h-14 items-center justify-center gap-2 py-3  text-[16px] text-[#FA8232] border-2 border-[#FA8232] rounded-[3px] px-8 bg-white  w-full  ">BUY NOW
                   </Link>
                 </div>
               </div>

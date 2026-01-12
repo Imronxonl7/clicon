@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
+import ProductsPage from './pages/ProductsPage';
 const CartPage = React.lazy(() => import("./pages/CartPage"));
 const FavouritePage = React.lazy(() => import("./pages/FavouritePage"));
 const RegisterPage = React.lazy(() => import("./pages/RegisterPage"));
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='cart/:id' element={<SinglePage/>}/>
         <Route path='like' element={<FavouritePage/>}/>
         <Route path='register' element={<RegisterPage/>}/>
+        <Route path='products' element={<ProductsPage/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

@@ -21,16 +21,16 @@ const Card = ({ el, i }) => {
           alt={el.title}
         />
         <div className=" items-center opacity-0 group-hover:opacity-100 duration-400 flex justify-center gap-2 bg-black/50 rounded-xs absolute top-0 left-0 w-54 h-47">
-          {like?.find((item) => item === el.id) ? (
+          {like?.find((item) => item.id === el.id) ? (
             <button
-              onClick={() => removeToLike(el.id)}
+              onClick={() => removeToLike(el)}
               className="cursor-pointer w-12.5 flex items-center justify-center hover:bg-[#FA8232] hover:text-white duration-300 h-12.5  rounded-full bg-white"
             >
               <FaHeart className="text-red-600 text-[24px]" />
             </button>
           ) : (
             <button
-              onClick={() => addToLike(el.id)}
+              onClick={() => addToLike(el)}
               className="cursor-pointer w-12.5 flex items-center justify-center hover:bg-[#FA8232] hover:text-white duration-300 h-12.5  rounded-full bg-white"
             >
               <FaRegHeart className="  text-[24px]" />

@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import { GoArrowRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 export default function SwiperMoto({ motoProduct }) {
   return (
@@ -26,7 +27,7 @@ export default function SwiperMoto({ motoProduct }) {
         className="moto"
       >
         {motoProduct?.map((el) => (
-          <SwiperSlide>
+          <SwiperSlide className="imm">
             <div className="w-full relative h-full">
               <p className="fixed z-4 w-25.25 h-25 flex items-center justify-center p-15 bg-[#2DA5F3] right-15 top-10 border-4 border-white rounded-full text-white text-[22px] font-semibold">
                 ${el.price}
@@ -46,10 +47,10 @@ export default function SwiperMoto({ motoProduct }) {
                   {el.description}
                 </p>
 
-                <button className="w-47.75 h-14 flex items-center rounded-xxs mt-5 justify-center gap-2 bg-[#FA8232] text-white text-[14px] font-bold">
+                <Link to={"/cart"} className="w-47.75 h-14 flex items-center rounded-xxs mt-5 justify-center gap-2 bg-[#FA8232] text-white text-[14px] font-bold">
                   SHOP NOW
                   <GoArrowRight className="w-6 h-6" />
-                </button>
+                </Link>
               </div>
               <img className="image w-92 h-102" src={el.thumbnail} />
             </div>

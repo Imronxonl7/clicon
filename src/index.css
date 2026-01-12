@@ -2,9 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "flowbite/src/themes/default";
 
-.active{
-    color: #FA8232 !important;
-}
+
 
  .swiper {
   width: 450px !important;
@@ -33,7 +31,6 @@
 
 .swiper {
   width: 100%;
-  height: 450px !important;
   object-fit: contain !important;
   margin-left: auto;
   margin-right: auto;
@@ -46,7 +43,7 @@
 }
 
 .mySwiper2 {
-  height: 500px !important;
+  height: 450px !important;
 
 }
 

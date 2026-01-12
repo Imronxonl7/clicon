@@ -16,14 +16,14 @@ const CartContext = ({children}) => {
             return prev?.filter((item) => item.id !== el.id)
         })
     }
-    const addToLike = (id) => {
+    const addToLike = (el) => {
         setLike((prev)=> {
-            return [...prev , id]
+            return [...prev , el]
         })
     }
-    const removeToLike = (id) => {
+    const removeToLike = (el) => {
         setLike((prev) => {
-            return prev?.filter((item) => item !== id)
+            return prev?.filter((item) => item.id !== el.id)
         })
     }
     

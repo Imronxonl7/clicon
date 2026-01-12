@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoArrowRight } from 'react-icons/go'
+import { Link } from 'react-router-dom'
 
 const AirPodsCard = ({el}) => {
   return (
@@ -12,10 +13,10 @@ const AirPodsCard = ({el}) => {
                           <p className="text-[18px] text-[#2DA5F3] font-semibold mt-2">
                             ${el.price} USD
                           </p>
-                          <button className="w-39 h-12 flex items-center rounded-xxs mt-5 justify-center gap-2 bg-[#FA8232] text-white text-[14px] font-bold">
+                          <Link to={"/cart"} className="w-39 h-12 flex items-center rounded-xxs mt-5 justify-center gap-2 bg-[#FA8232] text-white text-[14px] font-bold">
                             SHOP NOW
                             <GoArrowRight className="w-5 h-5" />
-                          </button>
+                          </Link>
                         </div>
                       </div>
   )

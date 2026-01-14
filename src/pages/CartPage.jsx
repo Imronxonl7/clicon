@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContextCard } from '../context/CartContext'
 
 const CartPage = () => {
+  const {cart} = useContext(CartContextCard)
   return (
-    <div>CartPage</div>
+    <section>
+
+    </section>
   )
 }
 

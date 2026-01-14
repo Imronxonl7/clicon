@@ -27,7 +27,7 @@ export default function SwiperMoto({ motoProduct }) {
         className="moto"
       >
         {motoProduct?.map((el) => (
-          <SwiperSlide className="imm">
+          <SwiperSlide className="">
             <div className="w-full relative h-full">
               <p className="fixed z-4 w-25.25 h-25 flex items-center justify-center p-15 bg-[#2DA5F3] right-15 top-10 border-4 border-white rounded-full text-white text-[22px] font-semibold">
                 ${el.price}
@@ -52,7 +52,7 @@ export default function SwiperMoto({ motoProduct }) {
                   <GoArrowRight className="w-6 h-6" />
                 </Link>
               </div>
-              <img className="image w-92 h-102" src={el.thumbnail} />
+              <img className="motoStyle w-92 h-102" src={el.thumbnail} />
             </div>
           </SwiperSlide>
         ))}

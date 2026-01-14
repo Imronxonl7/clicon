@@ -39,6 +39,7 @@ export const languageData = {
     getItNowApple: "Get it now",
     copyright: "Kinbo-eCommerce Template ©2021. Design by Templatecookie" ,
     emptyProduct: "You did not select preferred information",
+    emptyKorzina: "Your cart is currently empty.",
 
 
     topCategoryTitle: "TOP CATEGORY",
@@ -113,6 +114,8 @@ export const languageData = {
     getItNowApple: "Скачать сейчас",
     copyright: "Kinbo-eCommerce Template ©2021. Дизайн от Templatecookie" ,
     emptyProduct: "Вы не выбирали предпочтительную информацию",
+    emptyKorzina: "Ваша корзина пока пуста.",
+    
 
     topCategoryTitle: "ПОПУЛЯРНЫЕ КАТЕГОРИИ",
     topCategory1: "Компьютеры и ноутбуки",
@@ -185,6 +188,7 @@ export const languageData = {
     getItNowApple: "Hozir yuklab olish",
     copyright: "Kinbo-eCommerce Template ©2021. Dizayn: Templatecookie" , 
     emptyProduct: "Siz yoqtirilgan maʼlumot tanlamadingiz",
+    emptyKorzina: "Savatingiz hozircha bo‘sh",
 
 
     topCategoryTitle: "ENG OMMAVIY KATEGORIYALAR",

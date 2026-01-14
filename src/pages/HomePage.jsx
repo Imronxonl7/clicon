@@ -37,7 +37,7 @@ const HomePage = () => {
   return (
     <section>
       <div className="container mx-auto px-5">
-        <div className="flex items-start gap- justify-center">
+        <div className="flex items-start justify-center">
           <SwiperMoto motoProduct={motoProduct} />
           <div className="flex flex-col items-start  gap-11">
             <div className="w-126 h-62 bg-[#191C1F] relative rounded-[6px] ">

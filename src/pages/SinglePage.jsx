@@ -11,12 +11,12 @@ const SinglePage = () => {
   const { id } = useParams("id");
   const { data } = useGet({ url: "products", id: id });
   const singleProducts = data?.data;
-  const { cart , addToCart , removeToCart} = useContext(CartContextCard)
+  const { cart , addToCart , increase , decrease} = useContext(CartContextCard)
   return (
     <section>
       <div className="container mx-auto px-5">
         <div className="flex justify-center">
-          <div className="flex justify-between max-w-6xl  w-full gap-10 px-10 bg-white border border-[#E4E7E9] py-5 shadow-[0_8px_40px_0px_#0000001F] rounded-xs">
+          <div className="flex justify-between  max-w-350  w-full gap-10 px-10 bg-white border border-[#E4E7E9] py-5 shadow-[0_8px_40px_0px_#0000001F] rounded-xs">
             {/** Product image */}
             <div>
               <SwiperPage images={singleProducts?.images} />
@@ -59,29 +59,29 @@ const SinglePage = () => {
                   <p className="text-[18px] text-[#191C1F] font-normal bg-[#EFD33D] px-2.5 py-1.25 rounded-xxs">{(singleProducts?.discountPercentage)}% OFF  </p>
                 </div>
                 <div className="flex items-center justify-between mt-5 gap-4">
-                  <div className="border-2  border-[#E4E7E9] max-w-41 w-full max-h-14 flex items-center justify-between  px-5  py-3.5 rounded-[3px]">
+                  
+                  {
+                    cart?.find((item) => item.id === singleProducts.id) ? (<div className="border-2  border-[#E4E7E9]  w-full max-h-14 flex items-center justify-between  px-5  py-3.5 rounded-[3px]">
                     <button
-                    onClick={() => removeToCart(singleProducts)} 
+                    onClick={() => decrease(singleProducts)}
                     className="text-[#191C1F]">
-                      <FaMinus  />
+                      <FaMinus className="w-5 h-5" />
                     </button>
-                    <p className="text-[#475156] text-[16px] font-semibold">{cart.find((item) => item.id === singleProducts.id)?.qty  }</p>
-                   {
-                    cart?.find((item) => item.id === singleProducts.id) ? ( <button
+                    <p className="text-[#475156] text-[28px] font-semibold">{cart.find((item) => item.id === singleProducts.id)?.qty  }</p>
+                    <button
+                    onClick={() => increase(singleProducts)}
                     className="text-[#191C1F] ">
-                      <FaPlus />
-                    </button>) : ( <button
+                      <FaPlus  className="w-5 h-5"/>
+                    </button>
+                   
+                  </div>) : (<button
                     onClick={() => addToCart(singleProducts)} 
-                    className="text-[#191C1F] ">
-                      <FaPlus />
-                    </button>)
-                   }
-                  </div>
-                  <button
                    className="flex h-14 items-center cursor-pointer justify-center gap-2 py-3  text-[16px] bg-[#FA8232] rounded-[3px] px-8 text-white w-full  ">ADD TO CART 
                     <PiShoppingCartLight className="h-8 w-8"/>
-                  </button>
-                  <Link to={"/cart"} className="flex max-w-35.5 h-14 items-center justify-center gap-2 py-3  text-[16px] text-[#FA8232] border-2 border-[#FA8232] rounded-[3px] px-8 bg-white  w-full  ">BUY NOW
+                  </button>)
+                   }
+                  
+                  <Link to={"/cart"} className="flex max-w-39.5 h-14 items-center justify-center gap-2 py-3  text-[20px] text-[#FA8232] border-2 border-[#FA8232] rounded-[3px] px-8 bg-white  w-full  ">BUY NOW
                   </Link>
                 </div>
               </div>

@@ -40,6 +40,7 @@ export const languageData = {
     copyright: "Kinbo-eCommerce Template ©2021. Design by Templatecookie" ,
     emptyProduct: "You did not select preferred information",
     emptyKorzina: "Your cart is currently empty.",
+    home: "Home page",
 
 
     topCategoryTitle: "TOP CATEGORY",
@@ -115,6 +116,7 @@ export const languageData = {
     copyright: "Kinbo-eCommerce Template ©2021. Дизайн от Templatecookie" ,
     emptyProduct: "Вы не выбирали предпочтительную информацию",
     emptyKorzina: "Ваша корзина пока пуста.",
+    home: "Главная страница",
     
 
     topCategoryTitle: "ПОПУЛЯРНЫЕ КАТЕГОРИИ",
@@ -189,6 +191,7 @@ export const languageData = {
     copyright: "Kinbo-eCommerce Template ©2021. Dizayn: Templatecookie" , 
     emptyProduct: "Siz yoqtirilgan maʼlumot tanlamadingiz",
     emptyKorzina: "Savatingiz hozircha bo‘sh",
+    home: "Bosh sahifa",
 
 
     topCategoryTitle: "ENG OMMAVIY KATEGORIYALAR",

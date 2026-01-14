@@ -12,22 +12,25 @@ const FavouritePage = () => {
   return (
     <section>
       <div className="container mx-auto px-5">
-
+        <div className="flex items-center justify-center flex-wrap gap-5">
          {like?.length === 0 ? (
-          <div className="flex flex-col items-center justify-center my-30">
+          <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center my-30">
             <img className="w-50 h-50" src="	https://uzum.uz/static/img/hearts.cf414be.png" alt="" />
             <p className="text-[18px] mt-10 text-[#475156] font-semibold">
               {changeLanguage.emptyProduct}
             </p>
           </div>
+          </div>
         ) : (
-          like?.map((el , i) => 
-            <div className="grid grid-cols-4" key={i}>
+          like?.map((el) => 
+            
                <LikeProduct el={el}/>
-            </div>
+            
             
           )
         )}
+        </div>
         <Link to={"/products"} className="text-amber-600 mt-10">
           Barcha mahsulotlar
         </Link>

@@ -21,7 +21,7 @@ const FavouritePage = () => {
               {changeLanguage.emptyProduct}
             </p>
           </div>
-           <Link to={"/"} className="bg-white rounded-xs text-[16px] text-[#475156] py-1 px-3 border border-gray-500">{changeLanguage.home}</Link>
+           <Link to={"/"} className="bg-white rounded-xs cursor-pointer text-[16px] text-[#475156] py-1 px-3 border border-gray-500">{changeLanguage.home}</Link>
           </div>
         ) : (
           like?.map((el) => 

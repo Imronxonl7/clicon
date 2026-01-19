@@ -10,12 +10,11 @@ import Package from "./image/Package.svg";
 import Trophy from "./image/Trophy.svg"
 import CreditCard from "./image/CreditCard.svg"
 import HeadPhones from "./image/Headphones.svg"
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { data } = useGet({ url: "products?limit=194" });
   const products = data?.data?.products;
-  console.log(products);
-
   const initialProducts = products?.slice(
     products.length - 29,
     products.length - 27
@@ -41,9 +40,9 @@ const HomePage = () => {
   return (
     <section>
       <div className="container mx-auto px-5">
-        <div className="flex items-start justify-center">
+        <div className="flex w-full gap-11 items-start justify-center">
           <SwiperMoto motoProduct={motoProduct} />
-          <div className="flex flex-col items-start  gap-11">
+          <div className="flex flex-col items-start justify-center  gap-11">
             <div className="w-126 h-62 bg-[#191C1F] relative rounded-[6px] ">
               {products
                 ?.filter((item) => item.id === 123)
@@ -61,30 +60,30 @@ const HomePage = () => {
           </div>
         </div>
           <div className="flex items-center justify-center pb-20">
-            <div className="w-330 flex items-center justify-center gap-10 h-27 border border-[#E4E7E9] rounded-[6px]">
+            <div className="w-full flex items-center justify-center gap-10 h-27 border border-[#E4E7E9] rounded-[6px]">
             <div className="div1 flex  items-center gap-5">
               <img src={Package} alt="" />
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col pr-10 items-start">
                 <p className="text-[14px] text-[#191C1F] font-medium">Fasted Delivery</p>
                 <p className="text-[14px] text-[#5F6C72] font-normal">Delivery in 24/H</p>
             </div>
 
             </div>
-            <div className="div2 flex border-l border-[#E4E7E9] px-20 items-center gap-5">
+            <div className="div2 flex border-l border-[#E4E7E9] px-15 items-center gap-5">
               <img src={Trophy} alt="" />
             <div className="flex flex-col items-start">
                 <p className="text-[14px] text-[#191C1F] font-medium">24 Hours Return</p>
                 <p className="text-[14px] text-[#5F6C72] font-normal">100% money-back guarantee</p>
             </div>
             </div>
-            <div className="div3 flex border-l border-[#E4E7E9] px-10 items-center gap-5">
+            <div className="div3 flex border-l border-[#E4E7E9] px-15 items-center gap-5">
               <img src={CreditCard} alt="" />
             <div className="flex flex-col items-start">
                 <p className="text-[14px] text-[#191C1F] font-medium">Secure Payment</p>
                 <p className="text-[14px] text-[#5F6C72] font-normal">Your money is safe</p>
             </div>
             </div>
-            <div className="div4 flex border-l border-[#E4E7E9] px-10  items-center gap-5">
+            <div className="div4 flex border-l border-[#E4E7E9] px-15  items-center gap-5">
               <img src={HeadPhones} alt="" />
             <div className="flex flex-col items-start">
                 <p className="text-[14px] text-[#191C1F] font-medium">Support 24/7</p>
@@ -98,7 +97,7 @@ const HomePage = () => {
             Best Deals
           </h1>
           <div className="text-[#2DA5F3] flex items-center gap-2 text-[14px] font-semibold">
-            <p className="">Browse All Product</p>
+            <Link to={"/filter"} className="">Browse All Product</Link>
             <GoArrowRight className="w-5 h-5" />
           </div>
         </div>

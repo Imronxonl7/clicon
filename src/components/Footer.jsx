@@ -27,7 +27,7 @@ const Footer = () => {
   text-[14px] text-white font-medium 
   hover:border-white duration-300 transition-all hover:bg-[#303639]`;
   return (
-    <footer className="bg-[#191C1F]">
+    <footer className=" bg-[#191C1F]">
       <div className="container mx-auto py-18 px-25">
         <div className="dad flex justify-start gap-30 ">
           <div className="child">

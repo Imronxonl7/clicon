@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
+import FilterPageMemo from './pages/FilterPage';
 const ProductsPage = React.lazy(() => import("./pages/ProductsPage"));
 const NeedHelpMemo = React.lazy(() => import("./pages/NeedHelpPage"));
 const CustomerSupportPageMemo = React.lazy(() => import("./pages/CustomerSupportPage"));
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='needHelp' element={<NeedHelpMemo/>}/>
         <Route path='customerSupport' element={<CustomerSupportPageMemo/>}/>
         <Route path='compare' element={<ComparePageMemo/>}/>
+        <Route path='filter' element={<FilterPageMemo/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

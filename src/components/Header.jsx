@@ -25,9 +25,7 @@ const Header = () => {
   const [search, setSearch] = useState("");
   const { data } = useGet({ url:`products/search?q=${search}&limit=194` });
   const { setLang, changeLanguage } = useContext(LanguageContext);
-  const searchedData = data?.data?.products;
-  console.log(data);
-  
+  const searchedData = data?.data?.products;  
 
   return (
     <header className="bg-[#1B6392] fixed top-0 z-10 w-full ">

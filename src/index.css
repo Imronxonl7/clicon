@@ -4,6 +4,7 @@
 
 
 
+
  .swiper {
   width: 616px !important;
 }
@@ -92,7 +93,7 @@
     padding: 10px !important;
 }
 .moto{
-  width: 872px !important;
+  width: 100% !important;
   height: 540px !important;
   object-fit: contain !important;
   margin-bottom: 70px;

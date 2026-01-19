@@ -41,6 +41,7 @@ export const languageData = {
     emptyProduct: "You did not select preferred information",
     emptyKorzina: "Your cart is currently empty.",
     home: "Home page",
+    emptyCategory:"No products found in this category",
 
 
     topCategoryTitle: "TOP CATEGORY",
@@ -117,6 +118,7 @@ export const languageData = {
     emptyProduct: "Вы не выбирали предпочтительную информацию",
     emptyKorzina: "Ваша корзина пока пуста.",
     home: "Главная страница",
+    emptyCategory:"В этой категории товары не найдены",
     
 
     topCategoryTitle: "ПОПУЛЯРНЫЕ КАТЕГОРИИ",
@@ -192,6 +194,7 @@ export const languageData = {
     emptyProduct: "Siz yoqtirilgan maʼlumot tanlamadingiz",
     emptyKorzina: "Savatingiz hozircha bo‘sh",
     home: "Bosh sahifa",
+    emptyCategory:"Bu kategoriyaga mos mahsulot topilmadi",
 
 
     topCategoryTitle: "ENG OMMAVIY KATEGORIYALAR",

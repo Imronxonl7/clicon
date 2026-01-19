@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import CartContext from './context/CartContext.jsx'
 import Language from './context/Language.jsx'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <CartContext>
       <App />
     </CartContext>
+    <ToastContainer/>
     </Language>
   </StrictMode>,
 )
